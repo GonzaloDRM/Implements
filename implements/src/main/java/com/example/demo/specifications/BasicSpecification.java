@@ -8,6 +8,10 @@ import cl.apptec.mobysuite.model.bien.Asset;
 import cl.apptec.mobysuite.model.bien.Asset_;
 
 public class BasicSpecification {
+    
+    public static Specification<Objeto> vacio() {
+        return (root, query, criteriaBuilder) -> null;
+    }
 
     public static Specification<Objeto> hasId(Integer objetoId) {
         return (root, query, criteriaBuilder) -> criteriaBuilder.equal(root.get(Objeto_.ID), objetoId);
