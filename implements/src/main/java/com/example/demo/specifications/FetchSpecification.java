@@ -5,6 +5,8 @@ import javax.persistence.criteria.JoinType;
 import org.springframework.data.jpa.domain.Specification;
 
 import com.example.demo.models.Objeto;
+import com.example.demo.models.Objeto2_;
+import com.example.demo.models.Objeto_;
 
 public class FetchSpecification {
     
@@ -13,7 +15,7 @@ public class FetchSpecification {
         return (root, query, criteriaBuilder) -> {
             if (query.getResultType() != Long.class && query.getResultType() != long.class) {
                 query.distinct(true);
-                root.fetch(Objeto_.OBJETO2, JoinType.INNER);
+                root.fetch(Objeto_.OBJETOS2, JoinType.INNER);
             }
             return null;
         };
@@ -24,7 +26,7 @@ public class FetchSpecification {
         return (root, query, criteriaBuilder) -> {
             if (query.getResultType() != Long.class && query.getResultType() != long.class) {
                 query.distinct(true);
-                root.fetch(Objeto_.OBJETO2, JoinType.INNER).fetch(Objeto2_.OBJETO3, JoinType.INNER);
+                root.fetch(Objeto_.OBJETOS2, JoinType.INNER).fetch(Objeto2_.OBJETO3, JoinType.INNER);
             }
             return null;
         };

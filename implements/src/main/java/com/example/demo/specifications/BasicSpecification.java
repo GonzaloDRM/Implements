@@ -3,9 +3,7 @@ package com.example.demo.specifications;
 import org.springframework.data.jpa.domain.Specification;
 
 import com.example.demo.models.Objeto;
-
-import cl.apptec.mobysuite.model.bien.Asset;
-import cl.apptec.mobysuite.model.bien.Asset_;
+import com.example.demo.models.Objeto_;
 
 public class BasicSpecification {
     
@@ -17,8 +15,8 @@ public class BasicSpecification {
         return (root, query, criteriaBuilder) -> criteriaBuilder.equal(root.get(Objeto_.ID), objetoId);
     }
     
-    public static Specification<Objeto> hasNoContract() {
-        return (root, query, criteriaBuilder) -> criteriaBuilder.isTrue(root.get(Objeto_.DISPONIBLE));
+    public static Specification<Objeto> isActive() {
+        return (root, query, criteriaBuilder) -> criteriaBuilder.isTrue(root.get(Objeto_.ACTIVO));
     }
     
 }

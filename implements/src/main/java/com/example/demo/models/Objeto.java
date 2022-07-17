@@ -35,6 +35,8 @@ public class Objeto {
     
     @Column(name = "OBJETOS2")
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "Objeto", targetEntity = Objeto2.class )
-    private List<Objeto2> objectos2;
-
+    private List<Objeto2> objetos2;
+    
+    @Column(name = "ACTIVO")
+    private Boolean activo;
 }
