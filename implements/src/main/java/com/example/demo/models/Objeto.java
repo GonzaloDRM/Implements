@@ -28,7 +28,7 @@ public class Objeto {
     private String name;
 
     @Column(name = "NAME")
-    private Integer age;
+    private Double age;
 
     @Column(name = "FRIENDS")
     private List<String> friends;
